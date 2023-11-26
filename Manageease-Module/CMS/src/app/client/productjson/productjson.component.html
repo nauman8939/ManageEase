@@ -1,0 +1,17 @@
+<div class="json-container">
+      <div *ngFor="let item of jsonData">
+        <strong>Product ID:</strong> {{ item.productId }}<br>
+        <strong>Product Name:</strong> {{ item.productName }}<br>
+        <strong>Cost:</strong> {{ item.cost }}<br>
+        <strong>Ratings:</strong> {{ item.ratings }}<br>
+        <strong>Reviews:</strong> {{ item.reviews }}<br>
+        <strong>Product Information:</strong> {{ item.productInformation }}<br><br>
+        <button (click)="addToCart(item)" class="cart-button">
+          <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+        <button (click)="removeFromCart(item)" class="cart-button">
+          <i class="fas fa-cart-arrow-down"></i> Remove from Cart
+        </button>
+      </div>
+  </div>
+  

@@ -1,0 +1,49 @@
+.dashboard-main{
+  float: right;
+  margin:-0.7em 0em 0em 0.1em;
+  height:19.3em;
+  width:68em;
+}
+.UpperDiv{
+  height:4em;
+  width:70em;
+  margin:-0.7em 0em 0em -1.7em;
+  background-color: #f9f9f9;
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+.icon-container {
+  position: relative;
+  float: right;
+  margin: 12px;
+}
+.icon {
+  margin-top: -2.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+.dropdown-content button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.icon-container:hover .dropdown-content {
+  display: block;
+}
+.products-div{
+  margin:5em 0em 0em 0em;
+  width: 67em;
+  height: auto;
+}
