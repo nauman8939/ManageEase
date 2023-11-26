@@ -1,0 +1,9 @@
+<app-sidenav ></app-sidenav>
+
+<div class="cart-main">
+    <div class="json-container">
+        <div *ngFor="let item of cartItems">
+            {{ item.productName }} - {{ item.cost }}
+        </div>
+    </div>
+</div>
