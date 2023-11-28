@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JsonService } from '../productjson/json.service';
 
 @Component({
   selector: 'app-dashboard',

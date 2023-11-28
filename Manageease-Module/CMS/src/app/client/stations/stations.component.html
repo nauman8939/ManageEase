@@ -1,5 +1,19 @@
-<app-sidenav ></app-sidenav>
-
-<div class="station-main">
-  
-</div>
+<app-sidenav></app-sidenav>
+<router-outlet>
+  <div class="stations-div">
+    <div class="search-bar"> 
+      <form>
+        <br><br><br><br>
+        <label for="locationSearch">Search by Location:</label>
+        <input type="text" id="locationSearch" [formControl]="searchControl" placeholder="Enter location">
+      </form>
+    </div>
+    <div class="json-container">
+      <div *ngFor="let item of filteredStations"><br>
+        <strong>Station Name:</strong> {{ item.name }}<br><br><br>
+        <strong>Location:</strong> {{ item.location }}<br><br><br>
+        <strong>Products:</strong> {{ item.products.join(', ') }}<br><br><br>
+      </div>
+    </div>
+  </div>
+</router-outlet>

@@ -1,15 +1,14 @@
 <div class="json-container">
       <div *ngFor="let item of jsonData">
-        <strong>Product ID:</strong> {{ item.productId }}<br>
-        <strong>Product Name:</strong> {{ item.productName }}<br>
-        <strong>Cost:</strong> {{ item.cost }}<br>
-        <strong>Ratings:</strong> {{ item.ratings }}<br>
-        <strong>Reviews:</strong> {{ item.reviews }}<br>
-        <strong>Product Information:</strong> {{ item.productInformation }}<br><br>
-        <button (click)="addToCart(item)" class="cart-button">
+        <span style="margin-left:3.8em;font-size:1.4em;">{{ item.productName }}</span><br><br><br>
+        <strong>Price:</strong> {{ item.cost }}<br><br>
+        <strong>Ratings:</strong> {{ item.ratings }}<br><br>
+        <strong>Reviews:</strong> {{ item.reviews }}<br><br>
+        {{ item.productInformation }}<br><br>
+        <button (click)="addToCart(item)" class="cart-button" style="float:left;margin-left: 0em;">
           <i class="fas fa-cart-plus"></i> Add to Cart
         </button>
-        <button (click)="removeFromCart(item)" class="cart-button">
+        <button (click)="removeFromCart(item)" class="cart-button" style="float: right;margin-right: 0.8em;">
           <i class="fas fa-cart-arrow-down"></i> Remove from Cart
         </button>
       </div>
