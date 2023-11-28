@@ -1,30 +1,25 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { CartService } from './cart.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BillingService {
-  private billingItems: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
-  public billingItems$ = this.billingItems.asObservable();
-
-  constructor(private cartService: CartService) {
-    this.cartService.selectedProduct$.subscribe((selectedProduct) => {
-      if (selectedProduct) {
-        this.CheckoutProduct(selectedProduct);
-      }
-    });
-  }
+  private cartItems: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  public cartItems$ = this.cartItems.asObservable();
 
   CheckoutProduct(product: any): void {
-    const currentItems = this.billingItems.getValue();
-    const existingProduct = currentItems.find((item) => item.productId === product.productId);
+    const currentItems = this.cartItems.getValue();
+    const existingProduct = currentItems.find(item => item.productId === product.productId);
 
     if (!existingProduct) {
-      this.billingItems.next([...currentItems, product]);
+      this.cartItems.next([...currentItems, product]);
     } else {
-      // Handle existing product case...
+      // Handle product already in the cart
     }
+  }
+
+  getCartItems(): any[] {
+    return this.cartItems.getValue();
   }
 }
