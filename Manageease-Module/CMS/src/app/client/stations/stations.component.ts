@@ -5,6 +5,7 @@ import { StationService } from '../stations/stationjson.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stations',
@@ -16,9 +17,13 @@ export class StationsComponent implements OnInit {
   filteredStations: any[] = [];
   searchControl = new FormControl();
 
-  constructor(private StationService: StationService) {}
+  constructor(private StationService: StationService,private router:Router) {}
 
   ngOnInit(): void {
+    const sessionToken=localStorage.getItem("token");
+    if(!sessionToken){
+      this.router.navigate(['/login']);
+    }
     this.StationService.getJsonData().subscribe((data: any[]) => {
       this.jsonData = data;
       this.filteredStations = data;

@@ -3,12 +3,12 @@
 <div class="dashboard-main">
   <router-outlet>
     <div class="UpperDiv"></div><br>
-    <h2 style="text-align: center;">Dashboard</h2>
+    <h2 style="margin-left: 1em;">Hi {{username}} ! What would you like to explore today ? </h2>
     <div class="icon-container">
       <div class="icon" id="icon">&#9776;</div> 
       <div class="dropdown-content" id="dropdown">
         <button><i class="fas fa-user"></i> &nbsp;&nbsp;&nbsp;Profile</button>
-        <button><i class="fas fa-sign-out"></i> &nbsp;&nbsp;&nbsp;Logout</button>
+        <button (click)="logOutUser()"><i class="fas fa-sign-out"></i> &nbsp;&nbsp;&nbsp;Logout</button>
       </div>
     </div>
     <div class="products-div">
