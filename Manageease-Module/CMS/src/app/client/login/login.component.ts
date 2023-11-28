@@ -3,7 +3,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms'; 
 
 interface LoginData {
   username: string;
