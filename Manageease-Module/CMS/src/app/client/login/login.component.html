@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Bagel+Fat+One&family=Caprasimo&display=swap"
+    rel="stylesheet">
+  <title>LOGIN</title>
+  <style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('./assets/bgimgloginscreen.jpg') no-repeat center center fixed;
+      font-family: 'Agbalumo', Arial, sans-serif;
+      background-size: cover;
+
+    }
+    .scrolling-container {
+      max-height: 500vh; 
+      overflow-y: hidden; 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scrolling-container">
+  <div class="nav">
+    
+  </div>
+  <div class="login-container">
+    <div class="iconlogin">
+      <img src="./assets/logo.png" alt="microchip">
+    </div>
+    <div class="msg">
+      <h1>ManageEase</h1>
+    </div>
+    <div class="form">
+      <form (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="input-container">
+          <i class="fa fa-user"></i>
+          <input type="text" name="username" placeholder="Username" required [(ngModel)]="username">
+        </div>
+        <div class="input-container">
+          <i class="fa fa-lock"></i>
+          <input type="password" name="password" placeholder="Password" required [(ngModel)]="password">
+        </div>
+        <button type="submit">Get Started</button>
+      </form>
+      <div class="links-container">
+        <a href="#" class="forgot-password">Forgot Password?</a><br>
+        <a href="#" class="need-help">NEED HELP?</a>
+      </div>
+      
+
+    </div>
+
+    <div class="bottom-grid1">
+      <div class="links">
+        <ul class="links-unordered-list">
+          <a href="https://www.linkedin.com/in/nauman-pathan-5aa2b6231">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </ul>
+      </div>
+      <div class="copyright">
+        <p>© 2023 Key. All rights reserved | Design by <a
+            href="https://www.linkedin.com/in/nauman-pathan-5aa2b6231">ManageEase</a></p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+    <router-outlet></router-outlet>
+  
+</body>
+
+</html>
+

@@ -1,0 +1,139 @@
+@import '~font-awesome/css/font-awesome.css';
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Bagel+Fat+One&family=Caprasimo&display=swap');
+
+body {
+  background-size: cover;
+  filter: contrast(150%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.iconlogin {
+  margin-top: 3%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconlogin img {
+  width: 100px;
+}
+
+.msg{
+  margin-top: -3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.msg h1{
+  font-size: bold;
+  font-family: 'Agbalumo', Arial, sans-serif;
+  font-size: 40px;
+}
+.form {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: relative;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0); 
+}
+
+.form .input-container {
+  margin-bottom: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+.form .input-container i {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  font-size: 20px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0);
+  color: #1E5128;
+  z-index: 1;
+}
+
+.form .input-container input {
+  width: 70%;
+  padding: 20px 60px 20px 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #1E5128;
+  border-radius: 50px;
+  font-family: 'Agbalumo', Arial, sans-serif;
+  font-size: 20px;
+  outline: none;
+  z-index: 2;
+}
+
+.form .input-container input::placeholder {
+  font-family: 'Agbalumo', Arial, sans-serif;
+  color: #1E5128;
+}
+
+.form button {
+  width: calc(100% - 10px); 
+  padding: 15px 10px; 
+  background-color: #1E5128;
+  color: #D8E9A8;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Agbalumo', Arial, sans-serif;
+  margin: 30px auto;
+  display: block; 
+  text-align: center; 
+}
+.links-container {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 20px;
+}
+
+.forgot-password {
+  font-size: 15px;
+  color: #1E5128;
+  text-decoration: none; 
+  cursor: pointer; 
+}
+
+.need-help {
+  font-size: 15px;
+  color: #1E5128;
+  text-decoration: none; 
+  cursor: pointer; 
+}
+.bottom-grid1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Adjust as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: #1E5128;
+  margin: 10px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: flex-end; 
+  text-align: right;
+}
+
+.copyright a {
+  text-decoration: none;
+  color: #1E5128;
+  margin: 10px;
+}
