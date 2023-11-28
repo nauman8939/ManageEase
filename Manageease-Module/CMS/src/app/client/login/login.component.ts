@@ -1,5 +1,3 @@
-// login.component.ts
-
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -7,11 +5,6 @@ import { Router } from '@angular/router';
 interface LoginData {
   username: string;
   password: string;
-}
-
-interface LoginResponse {
-  success: boolean;
-  // Add other properties if needed
 }
 
 @Component({
@@ -30,10 +23,12 @@ export class LoginComponent {
     const loginUrl = 'http://localhost:8080/login';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    this.http.post<LoginResponse>(loginUrl, loginData, { headers, observe: 'response' }).subscribe(
-      (response: HttpResponse<LoginResponse>) => {
+    this.http.post<{ success: boolean; token: string }>(loginUrl, loginData, { headers, observe: 'response' }).subscribe(
+      (response: HttpResponse<{ success: boolean; token: string }>) => {
         if (response.body?.success) {
-          this.router.navigate(['home']); // Redirect to 'home' after successful login
+          // Store the token in localStorage
+          localStorage.setItem('token', response.body.token);
+          this.router.navigate(['/home']); // Redirect to 'home' after successful login
         } else {
           console.error('Login failed');
           alert('Invalid/Wrong Credentials');
@@ -47,6 +42,8 @@ export class LoginComponent {
   }
 
   logout() {
+    // Remove the token from localStorage on logout
+    localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
 }
