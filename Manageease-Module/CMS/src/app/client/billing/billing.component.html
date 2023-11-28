@@ -1,5 +1,11 @@
 <app-sidenav ></app-sidenav>
 
 <div class="billing-main">
-
+    <div class="json-container">
+        <div *ngFor="let item of cartItems">
+            <strong>ID:</strong> {{ item.id }}<br>
+            <strong>Product Name:</strong> {{ item.name }}<br>
+            <button (click)="generatePdf(item)">Download Receipt</button>
+          </div>
+    </div>
 </div>
