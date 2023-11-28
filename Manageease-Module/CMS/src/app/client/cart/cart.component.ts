@@ -14,6 +14,10 @@ export class CartComponent {
 
   constructor(private router: Router, private cartService: CartService, private billingService: BillingService) {}
   ngOnInit(): void {
+    const sessionToken=localStorage.getItem("token");
+    if(!sessionToken){
+      this.router.navigate(['/login']);
+    }
     this.cartService.cartItems$.subscribe(items => {
       this.cartItems = items;
     });

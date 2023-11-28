@@ -3,6 +3,7 @@
     "angular-jwt": "^0.1.11",
     "chart.js": "^4.4.0",
     "jspdf": "^2.5.1",
+    "jwt-decode": "^4.0.0",
     "ng2-charts": "^5.0.3",
     "sweetalert2": "^11.10.1"
   }

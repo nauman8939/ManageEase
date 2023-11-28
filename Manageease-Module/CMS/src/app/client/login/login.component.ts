@@ -40,10 +40,4 @@ export class LoginComponent {
       }
     );
   }
-
-  logout() {
-    // Remove the token from localStorage on logout
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
-  }
 }
