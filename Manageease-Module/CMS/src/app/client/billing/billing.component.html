@@ -2,10 +2,13 @@
 
 <div class="billing-main">
     <div class="json-container">
-        <div *ngFor="let item of cartItems">
-            <strong>ID:</strong> {{ item.id }}<br>
-            <strong>Product Name:</strong> {{ item.name }}<br>
-            <button (click)="generatePdf(item)">Download Receipt</button>
+        <div *ngFor="let Product of billingItems">
+            <strong>Product Name:</strong> {{ Product.productName }}<br><br>
+            <strong>Product Cost:</strong> {{ Product.cost }}<br><br>
+            <strong>Product Reviews:</strong> {{ Product.reviews }}<br><br>
+            <strong>Product Ratings:</strong> {{ Product.ratings }}<br><br>
+            <strong>Product Information:</strong> {{ Product.productInformation }}<br><br>
+            <button (click)="generatePdf(Product)" class="printBtn">Download Receipt</button>
           </div>
     </div>
 </div>

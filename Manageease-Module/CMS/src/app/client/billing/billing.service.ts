@@ -1,25 +1,23 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BillingService {
-  private cartItems: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
-  public cartItems$ = this.cartItems.asObservable();
+  private billingItems: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  public billingItems$ = this.billingItems.asObservable();
+
+  constructor(private router: Router) {}
 
   CheckoutProduct(product: any): void {
-    const currentItems = this.cartItems.getValue();
-    const existingProduct = currentItems.find(item => item.productId === product.productId);
-
-    if (!existingProduct) {
-      this.cartItems.next([...currentItems, product]);
-    } else {
-      // Handle product already in the cart
-    }
+    const currentItems = this.billingItems.getValue();
+    const existingProduct = currentItems.find((item) => item.productId === product.productId);
+  
+      this.billingItems.next([...currentItems, product]);
+      this.router.navigate(['/billing']);
   }
-
-  getCartItems(): any[] {
-    return this.cartItems.getValue();
-  }
+  
+  
 }

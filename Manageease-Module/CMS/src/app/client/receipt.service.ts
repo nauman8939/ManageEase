@@ -1,8 +1,6 @@
 // pdf.service.ts
 import { Injectable } from '@angular/core';
-import 'jspdf';
-
-declare let jsPDF: any;
+import { jsPDF } from 'jspdf';
 
 @Injectable({
   providedIn: 'root'

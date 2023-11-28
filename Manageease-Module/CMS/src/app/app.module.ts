@@ -17,6 +17,7 @@ import { ProductjsonComponent } from './client/productjson/productjson.component
 import { CartService } from './client/cart/cart.service';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BillingService } from './client/billing/billing.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule, 
     ReactiveFormsModule,
   ],
-  providers: [CartService],
+  providers: [CartService,BillingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

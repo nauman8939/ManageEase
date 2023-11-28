@@ -20,6 +20,6 @@ export class CartComponent {
   }
 
   checkout(product: any): void {
-    this.cartService.addToCart(product);
+    this.billingService.CheckoutProduct(product);
   }
 }
