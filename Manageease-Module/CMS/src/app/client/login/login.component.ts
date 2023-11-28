@@ -1,7 +1,9 @@
+// login.component.ts
 
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
 
 interface LoginData {
   username: string;
@@ -32,7 +34,7 @@ export class LoginComponent {
     this.http.post<LoginResponse>(loginUrl, loginData, { headers, observe: 'response' }).subscribe(
       (response: HttpResponse<LoginResponse>) => {
         if (response.body?.success) {
-          this.router.navigate(['cashier', 'cashier-dashboard']);
+          this.router.navigate(['home']); // Redirect to 'home' after successful login
         } else {
           console.error('Login failed');
           alert('Invalid/Wrong Credentials');

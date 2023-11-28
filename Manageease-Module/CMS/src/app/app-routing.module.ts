@@ -1,4 +1,3 @@
-// app-routing.module.ts
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,15 +6,16 @@ import { StationsComponent } from './client/stations/stations.component';
 import { BillingComponent } from './client/billing/billing.component';
 import { AboutComponent } from './client/about/about.component';
 import { CartComponent } from './client/cart/cart.component';
+import { LoginComponent } from './client/login/login.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'stations', component: StationsComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'about', component: AboutComponent },
   { path: 'cart', component: CartComponent },
-  //{ path: 'component2', component: Component2Component },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
 ];
 
 @NgModule({
