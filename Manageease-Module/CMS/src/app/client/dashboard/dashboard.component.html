@@ -1,9 +1,17 @@
-<app-sidenav ></app-sidenav>
+<app-sidenav></app-sidenav>
 
 <div class="dashboard-main">
   <router-outlet>
-    <div class="UpperDiv"></div><br>
-    <h2 style="margin-left: 2em;">Hi {{username}} ! What would you like to explore today ? </h2>
+    <div class="UpperDiv">
+      <div class="search-bar"> 
+        <form>
+          <br><br><br><br>
+          <label for="locationSearch">Search by Product Name : </label>
+          <input type="text" id="locationSearch" [formControl]="searchControl" placeholder="Enter product name">
+        </form>
+      </div>
+    </div><br>
+    <h2 style="margin-left: 2em;">Hi {{username}}! What would you like to explore today?</h2>
     <div class="icon-container">
       <div class="icon" id="icon">&#9776;</div> 
       <div class="dropdown-content" id="dropdown">
@@ -12,7 +20,7 @@
       </div>
     </div>
     <div class="products-div">
-      <app-json></app-json>
+      <app-json [products]="searchControl.value ? filteredProducts : jsonData"></app-json>
     </div>
   </router-outlet>
 </div>

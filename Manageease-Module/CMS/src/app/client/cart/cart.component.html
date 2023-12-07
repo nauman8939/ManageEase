@@ -18,7 +18,7 @@
         {{ item.productName }} - {{ item.cost }} - {{ item.productInformation }}<br>
       </p>
       <p class="totalmsg">Total: {{ calculateTotal() }}</p>
-      <button (click)="checkoutAll()" class="CheckoutAllBtn">Checkout All</button>
+      <button (click)="checkoutAll()" class="CheckoutAllBtn">Checkout All</button><br><br>
     </div>
   </div>
   <ng-template #emptyCartMessage>
