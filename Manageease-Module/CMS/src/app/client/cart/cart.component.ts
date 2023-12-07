@@ -73,8 +73,9 @@ export class CartComponent implements OnInit {
     Swal.fire({
       title: 'Customer Information',
       html:
-        '<input id="swal-input1" class="swal2-input" placeholder="Customer Name" required>' +
+        '<input id="swal-input1" class="swal2-input" placeholder="FullName" required>' +
         '<input id="swal-input2" class="swal2-input" placeholder="Phone Number" required>' +
+        '<br>'+
         '<select id="swal-input3" class="swal2-input">' +
         '  <option value="cash">Cash</option>' +
         '  <option value="upi">UPI</option>' +

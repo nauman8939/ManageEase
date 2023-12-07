@@ -16,6 +16,7 @@ import { SidenavComponent } from './client/sidenav/sidenav.component';
 import { ProductjsonComponent } from './client/productjson/productjson.component';
 import { CartService } from './client/cart/cart.service';
 import { BillingService } from './client/billing/billing.service';
+import { DashboardService } from './client/dashboard/dashboardjson.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { BillingService } from './client/billing/billing.service';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [CartService, BillingService],
+  providers: [CartService, BillingService,DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

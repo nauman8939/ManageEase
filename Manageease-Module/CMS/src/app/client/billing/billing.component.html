@@ -1,9 +1,10 @@
+<!-- Apply the new class to the empty cart message div -->
 <app-sidenav></app-sidenav>
 
 <div class="billing-main">
   <div class="json-container">
     <ng-container *ngIf="billingItems.length > 0; else emptyCartMessage">
-      <div *ngFor="let product of billingItems">
+      <div *ngFor="let product of billingItems" class="json-item">
         <!-- Display product information -->
         <strong>Product Name:</strong> {{ product.productName }}<br><br>
         <strong>Product Cost:</strong> {{ product.cost }}<br><br>
@@ -21,7 +22,7 @@
     </ng-container>
   </div>
   <ng-template #emptyCartMessage>
-    <div class="empty-cart-msg">
+    <div class="empty-cart-msg-container">
       <p>Oh-hoo! <i class="fa-regular fa-face-dizzy"></i> No Bills found. Please Checkout To Download/Print Receipts.</p>
     </div>
   </ng-template>

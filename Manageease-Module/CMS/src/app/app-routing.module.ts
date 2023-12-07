@@ -7,6 +7,8 @@ import { BillingComponent } from './client/billing/billing.component';
 import { AboutComponent } from './client/about/about.component';
 import { CartComponent } from './client/cart/cart.component';
 import { LoginComponent } from './client/login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'billing', component: BillingComponent },
   { path: 'about', component: AboutComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'adminlogin', component: LoginAdminComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
 ];
 
