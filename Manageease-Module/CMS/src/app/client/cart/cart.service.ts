@@ -23,7 +23,6 @@ export class CartService {
       Swal.fire('Warning', 'Product Already Added In Cart', 'warning');
     }
   }
-  
 
   getCartItems(): any[] {
     return this.cartItems.getValue();
@@ -39,6 +38,10 @@ export class CartService {
       this.cartItems.next(updatedItems);
       Swal.fire("Success", "Product Removed", "success");
     }
+  }
+
+  clearCart(): void {
+    this.cartItems.next([]);
   }
 
   showEmptyCartAlert(): void {
