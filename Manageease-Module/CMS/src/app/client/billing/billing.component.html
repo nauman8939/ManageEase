@@ -1,14 +1,28 @@
-<app-sidenav ></app-sidenav>
+<app-sidenav></app-sidenav>
 
 <div class="billing-main">
-    <div class="json-container">
-        <div *ngFor="let Product of billingItems">
-            <strong>Product Name:</strong> {{ Product.productName }}<br><br>
-            <strong>Product Cost:</strong> {{ Product.cost }}<br><br>
-            <strong>Product Reviews:</strong> {{ Product.reviews }}<br><br>
-            <strong>Product Ratings:</strong> {{ Product.ratings }}<br><br>
-            <strong>Product Information:</strong> {{ Product.productInformation }}<br><br>
-            <button (click)="generatePdf(Product)" class="printBtn">Download Receipt</button>
-          </div>
+  <div class="json-container">
+    <ng-container *ngIf="billingItems.length > 0; else emptyCartMessage">
+      <div *ngFor="let product of billingItems">
+        <!-- Display product information -->
+        <strong>Product Name:</strong> {{ product.productName }}<br><br>
+        <strong>Product Cost:</strong> {{ product.cost }}<br><br>
+        <strong>Product Reviews:</strong> {{ product.reviews }}<br><br>
+        <strong>Product Ratings:</strong> {{ product.ratings }}<br><br>
+        <strong>Product Information:</strong> {{ product.productInformation }}<br><br>
+        <!-- Display user information -->
+        <strong>Customer Name:</strong> {{ userInfo?.customerName }}<br><br>
+        <strong>Phone Number:</strong> {{ userInfo?.phoneNumber }}<br><br>
+        <strong>Payment Type:</strong> {{ userInfo?.paymentType }}<br><br>
+
+        <!-- Button to download receipt -->
+        <button (click)="generatePdf(product)" class="printBtn">Download Receipt</button>
+      </div>
+    </ng-container>
+  </div>
+  <ng-template #emptyCartMessage>
+    <div class="empty-cart-msg">
+      <p>Oh-hoo! <i class="fa-regular fa-face-dizzy"></i> No Bills found. Please Checkout To Download/Print Receipts.</p>
     </div>
+  </ng-template>
 </div>

@@ -1,11 +1,29 @@
+<!-- cart.component.html -->
 <app-sidenav></app-sidenav>
 
 <div class="cart-main">
-    <div class="json-container">
-        <div *ngFor="let item of cartItems">
-            {{ item.productName }} - {{ item.cost }}<br><br>
-            {{ item.productInformation }}
-            <button (click)="checkout(item)" class="CheckoutBtn"><i class="fas fa-shopping-basket"></i>&nbsp;&nbsp;&nbsp;Checkout</button>
-        </div>
+  <div class="json-container" *ngIf="cartItems.length > 0; else emptyCartMessage">
+    <div *ngFor="let item of cartItems">
+      {{ item.productName }} - {{ item.cost }}<br>
+      {{ item.productInformation }}<br><br>
+      <button (click)="checkout(item)" class="CheckoutBtn">
+        <i class="fas fa-shopping-basket"></i>&nbsp;&nbsp;&nbsp;Checkout
+      </button>
+      <button (click)="removeFromCart(item)" class="RemoveBtn">
+        <i class="fas fa-trash"></i>&nbsp;&nbsp;&nbsp;Remove
+      </button>
     </div>
+    <div class="total-section">
+      <p *ngFor="let item of cartItems">
+        {{ item.productName }} - {{ item.cost }} - {{ item.productInformation }}<br>
+      </p>
+      <p class="totalmsg">Total: {{ calculateTotal() }}</p>
+      <button (click)="checkoutAll()" class="CheckoutAllBtn">Checkout All</button>
+    </div>
+  </div>
+  <ng-template #emptyCartMessage>
+    <div class="empty-cart-msg">
+      <p>Oh-ho! <i class="fa-regular fa-face-dizzy"></i> Your cart is empty. Add something to checkout.</p>
+    </div>
+  </ng-template>
 </div>
